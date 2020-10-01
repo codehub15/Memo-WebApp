@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ListItem from './ListItem'
 import AddItem from './AddItem'
 
 
@@ -56,7 +55,6 @@ export default class List extends Component {
         this.setState({
             items: newState
         }, () => {
-
             // archive items, save in local storage
             localStorage.setItem('memo-list', JSON.stringify(this.state.items))
         })
@@ -101,7 +99,7 @@ export default class List extends Component {
         });
 
         return (
-            <div>
+            <div className="list-container">
                 <AddItem
                     item={memoItem}
                     addItem={this.addItem}

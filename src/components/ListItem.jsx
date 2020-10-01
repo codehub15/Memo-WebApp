@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-
+import { BiEditAlt } from 'react-icons/bi'
+import { AiOutlineSave } from 'react-icons/ai'
+import { RiDeleteBin6Line } from 'react-icons/ri'
 
 export default class ListItem extends Component {
     constructor(props) {
@@ -26,7 +28,7 @@ export default class ListItem extends Component {
         const data = this.props.item;
 
         return (
-            <div>
+            <>
                 <li
                     onClick={() => {
                         this.props.completeItem(data.id);
@@ -52,20 +54,25 @@ export default class ListItem extends Component {
                         )
                     }
 
-                    {/* button to remove item */}
-                    <button
-                        onClick={() => this.props.removeItem(data.id)}
-                        className="btn-delete"
-                    >
-                        &#128465;
-                    </button>
+                    <div className="btns">
+                        {/* button to remove item */}
+                        <button className="btn btn-delete"
+                            onClick={() => this.props.removeItem(data.id)}
+                        >
+                            <RiDeleteBin6Line />
+                        </button>
 
-                    {/* button to edit item */}
-                    <button onClick={() => this.editFunc(data.id)}>
-                        {this.state.edit ? "save" : "edit"}
-                    </button>
+                        {/* button to edit item */}
+                        <button className="btn save-btn" onClick={() => this.editFunc(data.id)}>
+                            {this.state.edit ?
+                                <div><AiOutlineSave /> SAVE</div>
+                                :
+                                <div><BiEditAlt /> EDIT</div>
+                            }
+                        </button>
+                    </div>
                 </li>
-            </div>
+            </>
         )
     }
 }

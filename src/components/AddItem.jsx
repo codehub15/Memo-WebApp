@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ListItem from './ListItem';
+import ListItem from './ListItem'
+import { CgPlayListAdd } from 'react-icons/cg'
 
 export default class AddItem extends Component {
     constructor(props) {
@@ -46,16 +47,20 @@ export default class AddItem extends Component {
         });
 
         return (
-            <div>
+            <div className="list-item-container">
                 <h2>My plan for the day</h2>
 
                 <ul> {memoList} </ul>
 
                 <form className="memo-form" onSubmit={this.handleSubmit}>
                     <label className="input-item" for="user-input">
-                        <input type="text" name="todo" id="user-input" value={this.state.userInput} onChange={this.handleNewItem} />
+                        <input type="text"
+                            name="todo"
+                            id="user-input"
+                            placeholder="add to plan"
+                            value={this.state.userInput} onChange={this.handleNewItem} />
                     </label>
-                    <input type="submit" className="btn" value="ADD" />
+                    <button type="submit" className="btn add-btn"><CgPlayListAdd /> ADD</button>
                 </form>
             </div>
         )
