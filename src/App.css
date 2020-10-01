@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
 body {
  background-color: #282c34;
  color: #fff;
+ font-family: 'Sofia', cursive;
 }
 
 .App {
@@ -11,8 +14,9 @@ body {
 }
 
 .App-logo {
-  height: 5rem;
+  height: 3rem;
   pointer-events: none;
+  font-size: 1.8em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -23,17 +27,12 @@ body {
 
 .App-header {
   background-color: #282c34;
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 /* list */
@@ -41,6 +40,18 @@ body {
   text-align: center;
   padding: 1rem;
   border: 1px solid #fff;
+}
+
+.list-item-container {
+  text-align: center;
+}
+
+.list-container {
+  min-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 ul {
@@ -51,15 +62,12 @@ li {
   padding: 0rem;
   text-align: left;
   display: flex;
+  border-bottom: darkgrey 1px dashed;
 }
 
 li p {
+  max-width: 30vw;
   font-size: 1.2rem;
-}
-
-.btn-delete {
-  margin-left: auto;
-  text-decoration: none;
 }
 
 /* cross out completed task */
@@ -72,6 +80,35 @@ li p {
   margin: 2rem 0rem;
 }
 
+.memo-form input { 
+  padding: 0.1rem 0.5rem;
+}
+
+.btns {
+  margin-left: auto;
+  align-self: center;
+}
+
+.btn {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgb(179, 177, 177);
+  border-radius: 3px;
+}
+
+.add-btn:hover {
+  background-color: rgb(60, 102, 73);
+  color: #cfd6e6;
+}
+
+.save-btn:hover {
+  color: #cfd6e6;
+}
+
+.btn-delete:hover {
+  background-color: rgb(189, 110, 110);
+  color: #15171b;
+}
 
 
 @keyframes App-logo-spin {
