@@ -50,8 +50,6 @@ export default class AddItem extends Component {
             <div className="list-item-container">
                 <h2>My plan for the day</h2>
 
-                <ul> {memoList} </ul>
-
                 <form className="memo-form" onSubmit={this.handleSubmit}>
                     <label className="input-item" for="user-input">
                         <input type="text"
@@ -62,6 +60,8 @@ export default class AddItem extends Component {
                     </label>
                     <button type="submit" className="btn add-btn"><CgPlayListAdd /> ADD</button>
                 </form>
+
+                <ul> {memoList} </ul>
             </div>
         )
     }
